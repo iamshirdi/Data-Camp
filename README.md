@@ -83,6 +83,7 @@ fam.count("mom") #returns how many times mom apears in fam list
 - So logarithms can quickly tell us whether the rate of change of something is increasing (like a car speeding up), staying constant, or decreasing 
 - rates = [1.5, 1.4, 1.3, 1.2, 1.0, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3]
 <img src = "./static/log-scale.PNG" height = 400px>
+
 - Histogram bins with x as list and y number of bins (default=10) plt.hist(x,bins=n)
 - plt.clf() cleans it up again so you can start afresh.
 - Customization the story you want to tell on data
@@ -100,3 +101,15 @@ plt.scatter(x = gdp_cap, y = life_exp, s = np.array(pop) * 2, c= col, alpha = 0.
 - plt.text(1550, 71, 'India') - they addd words india to plot
 
 
+#### Dictionaries and Pandas
+- Keys are unique, immutable object- cannot be changed after created, check keys using, key in dict . dict(world['sealand']) to remove lements
+- list is collection of values where order matters select entire subsets unlike dictionary where lookup keys matters
+- pandas is tabluar data. Example row is observation (has unique labels) and variables as columns
+- **Pandas** works for different data types unlike numpy only limited to single data type operation for dimensions
+- pd.Dataframe(dict) where dict value is list to represent rows/observations , automatically assigns from 0 . df.index =[] to assign labels to index. 
+- pd.read_csv(".csv", index_col = 0) to assign first column as row index
+- columns can be accessed like dictionary keys. single bracket gives series and double bracket gives dataframe
+- rows using slice df[1:4]
+- loc based on labels, df.loc(["RU","IN"],['country','capital']), df.loc([:,:])
+- i loc uses index. **series single bracket**. bunch of series put together gets a dattaframe. **double brackets** df[['country']] gives dataframe or print(cars.iloc [:,[2]] ) for dataframe instead of series print(cars.iloc[:,2])
+- 
