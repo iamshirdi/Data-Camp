@@ -101,7 +101,7 @@ plt.scatter(x = gdp_cap, y = life_exp, s = np.array(pop) * 2, c= col, alpha = 0.
 - plt.text(1550, 71, 'India') - they addd words india to plot
 
 
-#### Dictionaries and Pandas
+## Dictionaries and Pandas
 - Keys are unique, immutable object- cannot be changed after created, check keys using, key in dict . dict(world['sealand']) to remove lements
 - list is collection of values where order matters select entire subsets unlike dictionary where lookup keys matters
 - pandas is tabluar data. Example row is observation (has unique labels) and variables as columns
@@ -112,4 +112,32 @@ plt.scatter(x = gdp_cap, y = life_exp, s = np.array(pop) * 2, c= col, alpha = 0.
 - rows using slice df[1:4]
 - loc based on labels, df.loc(["RU","IN"],['country','capital']), df.loc([:,:])
 - i loc uses index. **series single bracket**. bunch of series put together gets a dattaframe. **double brackets** df[['country']] gives dataframe or print(cars.iloc [:,[2]] ) for dataframe instead of series print(cars.iloc[:,2])
+
+## Loops, Filtering, Logic
+- integers,strings are uncomparable unlike floats,integers. In words alphabets are comparable
+- numpy comparision works elementwise selection bmi[bmi>23]
+- AND, OR in mumpy not directly compatible for elementwise with numpy arrays.  Need to use np.logical_and
+- enumerate also prints index and value itself
+- for loop in 2darrays like np.array([np_height, np_weight]) only prints 1d array need to use np.nditer(). this prints indidvudually rows then columns unlike before at a time
+- pandas for loop iters over columns if want rows need to call iterrows method which will generate label of row and actual data of row (pandas series)
+<img src = "./static/pandas-iteration.PNG" height = 400px>
+
+- large dataframe becomes slow (series object is created on every iteration) better use **apply method** for faster performance. Applys element wise  
+brics['name_length'] = brics["country"].apply(len). some other types are .apply(str.upper)
+- Hacker statstics helps in getting probabilty,statstics by large experiements in practice
+- pseudo random nubers : np.random.rand() between 0 and 1 where seed is choosed by python
+- np.random.seed(123) and then calling .rand() will be consistent. If you set the same seed again it will be repeated. psudo random but consistent between anaylysis. reproducible
+- np.random.randint(0,2) integers  generate
+- Random walk is sequence of random steps
+- if you pass max() two arguments, the biggest one gets returned. variable x never goes below 10 when you decrease it, you can use: x = max(10,x-1)
+- Simulate 10  random times with 100 dice throws. Transpose np_aw by calling np.transpose() on np_aw. Call the result np_aw_t. Now every row in np_all_walks represents the position after 1 throw for the 10 random walks.
+<img src = "./static/dice-throw-walk.PNG" height = 400px>
+
+- There's still something we forgot! You're a bit clumsy and you have a 0.1% chance of falling down
+```
+        # Implement clumsiness
+        if np.random.rand() <= 0.001 :
+            step = 0
+```
+- histogram to find odds that you reach 60 steps or higher is plotted. usually gaussian distribution is observed for large experiements
 - 
