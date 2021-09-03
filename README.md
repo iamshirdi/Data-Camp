@@ -76,6 +76,10 @@ fam.count("mom") #returns how many times mom apears in fam list
 
 ## Matplotlib
 -   pyplot subpackage of matplotlib : import matplotlib.pyplot as plt
+- fig = plt.figure() for figure object
+- fig = plt.figure(figsize=(12,8)) # Create a figure and increase the figure size
+- plt.style.use('fivethirtyeight') # Set the figure style
+- if aggregates Line plot - small data else scatter plot for individual -data large - to not miss any value  
 - plt.plot(year,month) and plt.show() needed to show because we need to add details : # Put the x-axis on a logarithmic scale...........plt.xscale('log')
 - plt.scatter() is not connected by line. only dots . usually used to find correlation
 - log scale is used to find values large difference changes apart example. 100  = 2 and 100000 = 5
